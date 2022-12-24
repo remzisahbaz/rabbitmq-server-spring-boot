@@ -1,0 +1,21 @@
+server:
+  port: 8181
+spring:
+  jackson:
+    serialization:
+      FAIL_ON_EMPTY_BEANS: false
+  config:
+    import: optional:file:.env[.properties]
+  profiles:
+    active: dev
+  rabbitmq:
+    password: ${RABBITMQ_PASSWORD}
+    port: ${RABBITMQ_PORT}
+    host: ${RABBITMQ_HOST}
+    username: ${RABBITMQ_USER}
+    queue:
+      json:
+        fromQueue: fromQueue
+        toQueue:  toQueue
+    key:
+      toKey: producer.to.consumer
