@@ -9,7 +9,7 @@ import org.springframework.amqp.support.converter.MessageConverter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Conditional;
+
 import org.springframework.context.annotation.Configuration;
 
 
@@ -51,13 +51,13 @@ public class RabbitMQConfig {
 
     }
 
-   @Bean
-    public AmqpTemplate amqpTemplate(ConnectionFactory connectionFactory){
+   //@Bean
+/*    public AmqpTemplate amqpTemplate(ConnectionFactory connectionFactory){
         final RabbitTemplate rabbitTemplate = new RabbitTemplate(connectionFactory);
         rabbitTemplate.setMandatory(true);
         return rabbitTemplate;
 
-   }
+   }*/
 
    @Bean
     public MessageConverter converter(){
