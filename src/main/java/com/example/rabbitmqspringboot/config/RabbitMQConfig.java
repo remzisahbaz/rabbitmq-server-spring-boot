@@ -47,7 +47,7 @@ public class RabbitMQConfig {
         return BindingBuilder
                 .bind(toQueue())
                 .to(topicExchange())
-                .with("key");
+                .with(key);
 
     }
 
